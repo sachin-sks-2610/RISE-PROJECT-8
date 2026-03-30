@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us – ServeEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css?v=1.0.1" />
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div class="loader-overlay" id="loader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">⚡</span>ServeEase
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-ghost btn-sm" id="login-btn">Login</button>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+          <li><a href="#" id="mobile-login-btn">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header-title">About Us</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">About</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT HERO ===== -->
+    <section class="about-hero">
+      <div class="about-hero-container">
+        <div class="about-hero-content fade-in">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title" style="text-align:left; max-width:520px;">
+            We're on a mission to make quality services accessible to everyone
+          </h2>
+          <p class="about-hero-text">
+            ServeEase was founded in 2020 with a simple idea: connecting skilled
+            professionals with the people who need them should be effortless, transparent,
+            and fair for everyone involved. We've grown from a small startup into a
+            trusted platform serving thousands of homes and businesses every day.
+          </p>
+          <p class="about-hero-text">
+            Whether you need a plumber at 7am or a photographer for the weekend,
+            our vetted network of service providers has you covered — with upfront
+            pricing, real reviews, and seamless booking in just a few clicks.
+          </p>
+          <div class="about-hero-btns">
+            <a href="services.html" class="btn btn-primary btn-lg">Explore Services</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="about-visual fade-in delay-2">
+          <div class="about-visual-card">
+            <div class="about-visual-icon">🚀</div>
+            <div class="about-visual-number">2020</div>
+            <div class="about-visual-label">Founded</div>
+          </div>
+          <div class="about-visual-card">
+            <div class="about-visual-icon">🌍</div>
+            <div class="about-visual-number">40+</div>
+            <div class="about-visual-label">Cities Served</div>
+          </div>
+          <div class="about-visual-card">
+            <div class="about-visual-icon">🤝</div>
+            <div class="about-visual-number">2,500+</div>
+            <div class="about-visual-label">Pro Providers</div>
+          </div>
+          <div class="about-visual-card">
+            <div class="about-visual-icon">⭐</div>
+            <div class="about-visual-number">4.9</div>
+            <div class="about-visual-label">Avg. Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MISSION & VALUES ===== -->
+    <section class="section" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">What We Stand For</span>
+          <h2 class="section-title">Our Core Values</h2>
+          <p class="section-subtitle">
+            Everything we do is guided by four principles that keep us honest,
+            customer-first, and constantly improving.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card fade-in delay-1">
+            <div class="value-icon" style="background: #EEF2FF; color: #6366F1;">🎯</div>
+            <h3 class="value-title">Transparency</h3>
+            <p class="value-text">
+              No hidden fees, no surprises. Every price is stated upfront so you
+              always know exactly what you're paying for.
+            </p>
+          </div>
+
+          <div class="value-card fade-in delay-2">
+            <div class="value-icon" style="background: #F0FDF4; color: #22C55E;">🛡️</div>
+            <h3 class="value-title">Trust & Safety</h3>
+            <p class="value-text">
+              Every professional on our platform is background-checked, licensed,
+              and insured — giving you peace of mind every time.
+            </p>
+          </div>
+
+          <div class="value-card fade-in delay-3">
+            <div class="value-icon" style="background: #FFF7ED; color: #F97316;">⚡</div>
+            <h3 class="value-title">Speed & Reliability</h3>
+            <p class="value-text">
+              Book in minutes, get confirmations instantly, and rely on punctual
+              professionals who respect your time.
+            </p>
+          </div>
+
+          <div class="value-card fade-in delay-4">
+            <div class="value-icon" style="background: #FDF4FF; color: #A855F7;">💡</div>
+            <h3 class="value-title">Innovation</h3>
+            <p class="value-text">
+              We constantly invest in our platform so finding and booking services
+              gets faster, smarter, and more intuitive over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ANIMATED COUNTERS ===== -->
+    <section class="counters-section">
+      <div class="container">
+        <div class="counters-grid">
+          <div class="counter-item fade-in">
+            <div class="counter-number" data-target="50000">0</div>
+            <div class="counter-suffix">+</div>
+            <div class="counter-label">Happy Customers</div>
+          </div>
+          <div class="counter-item fade-in delay-1">
+            <div class="counter-number" data-target="2500">0</div>
+            <div class="counter-suffix">+</div>
+            <div class="counter-label">Verified Professionals</div>
+          </div>
+          <div class="counter-item fade-in delay-2">
+            <div class="counter-number" data-target="120000">0</div>
+            <div class="counter-suffix">+</div>
+            <div class="counter-label">Services Completed</div>
+          </div>
+          <div class="counter-item fade-in delay-3">
+            <div class="counter-number" data-target="98">0</div>
+            <div class="counter-suffix">%</div>
+            <div class="counter-label">Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OUR JOURNEY ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Timeline</span>
+          <h2 class="section-title">Our Journey So Far</h2>
+          <p class="section-subtitle">
+            From a two-person startup to a nationwide platform — here are the moments that
+            defined us.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item fade-in-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2020</span>
+              <h3 class="timeline-title">Founded in a Garage</h3>
+              <p class="timeline-text">
+                Two friends frustrated by unreliable contractors decided to build
+                a better way. ServeEase launched in beta with 12 service providers
+                in one city.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2021</span>
+              <h3 class="timeline-title">Seed Funding & Expansion</h3>
+              <p class="timeline-text">
+                Raised $2M in seed funding and expanded to 5 major cities, onboarding
+                over 300 vetted professionals across 10 service categories.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2022</span>
+              <h3 class="timeline-title">10,000 Bookings Milestone</h3>
+              <p class="timeline-text">
+                Crossed 10,000 completed bookings and launched our mobile-optimized
+                platform alongside the provider rating and review system.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2023</span>
+              <h3 class="timeline-title">Series A & 25 Cities</h3>
+              <p class="timeline-text">
+                Closed a $12M Series A round. Expanded to 25 cities, introduced
+                subscription packages, real-time tracking, and same-day booking.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2024</span>
+              <h3 class="timeline-title">120,000+ Services & Counting</h3>
+              <p class="timeline-text">
+                Now operating in 40+ cities with 2,500+ verified providers and
+                over 120,000 completed services — and we're just getting started.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="section" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">The Team</span>
+          <h2 class="section-title">Meet the People Behind ServeEase</h2>
+          <p class="section-subtitle">
+            A diverse team united by the passion for making everyday services simpler,
+            safer, and more affordable for everyone.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card fade-in delay-1">
+            <div class="team-avatar" style="background: linear-gradient(135deg, #6366F1, #8B5CF6);">AK</div>
+            <div class="team-info">
+              <h3 class="team-name">Alex Kim</h3>
+              <span class="team-role">Co-Founder & CEO</span>
+              <p class="team-bio">
+                Former product lead at Uber with 10 years in marketplace platforms.
+                Passionate about connecting communities through technology.
+              </p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card fade-in delay-2">
+            <div class="team-avatar" style="background: linear-gradient(135deg, #22C55E, #16A34A);">SR</div>
+            <div class="team-info">
+              <h3 class="team-name">Sofia Reyes</h3>
+              <span class="team-role">Co-Founder & CTO</span>
+              <p class="team-bio">
+                Full-stack engineer and ex-Airbnb tech lead. Built our entire booking
+                engine from scratch and leads our 30-person engineering team.
+              </p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="GitHub">⌥</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card fade-in delay-3">
+            <div class="team-avatar" style="background: linear-gradient(135deg, #F97316, #EF4444);">MP</div>
+            <div class="team-info">
+              <h3 class="team-name">Marcus Patel</h3>
+              <span class="team-role">Head of Operations</span>
+              <p class="team-bio">
+                Ran logistics for TaskRabbit and Handy. Oversees provider onboarding,
+                quality control, and city operations across all 40+ markets.
+              </p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card fade-in delay-4">
+            <div class="team-avatar" style="background: linear-gradient(135deg, #A855F7, #7C3AED);">JL</div>
+            <div class="team-info">
+              <h3 class="team-name">Jamie Li</h3>
+              <span class="team-role">Head of Design</span>
+              <p class="team-bio">
+                Award-winning UX designer with a background in service design and
+                human-computer interaction. Leads the entire product design experience.
+              </p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Dribbble">🏀</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card fade-in delay-1">
+            <div class="team-avatar" style="background: linear-gradient(135deg, #0EA5E9, #6366F1);">DN</div>
+            <div class="team-info">
+              <h3 class="team-name">Dana Nwosu</h3>
+              <span class="team-role">Head of Marketing</span>
+              <p class="team-bio">
+                Growth marketer who scaled user acquisition from 1K to 50K+ customers
+                in two years. Expert in community-led and performance-driven growth.
+              </p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card fade-in delay-2">
+            <div class="team-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);">RO</div>
+            <div class="team-info">
+              <h3 class="team-name">Ryan O'Brien</h3>
+              <span class="team-role">Head of Customer Success</span>
+              <p class="team-bio">
+                Former support lead at Fiverr. Manages our world-class support team
+                and has maintained a 4.9★ customer satisfaction score for 18 months.
+              </p>
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content fade-in">
+          <h2 class="cta-title">Ready to experience ServeEase?</h2>
+          <p class="cta-subtitle">
+            Join 50,000+ satisfied customers who trust us for their home and business needs.
+          </p>
+          <div class="cta-btns">
+            <a href="services.html" class="btn btn-secondary btn-lg">Browse Services</a>
+            <a href="contact.html" class="btn btn-outline-white btn-lg">Talk to Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">⚡</span>ServeEase
+          </a>
+          <p class="footer-tagline">
+            Connecting you with trusted professionals for every home and business need.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="social-link">f</a>
+            <a href="#" aria-label="Twitter" class="social-link">𝕏</a>
+            <a href="#" aria-label="Instagram" class="social-link">📷</a>
+            <a href="#" aria-label="LinkedIn" class="social-link">in</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Services</h4>
+          <ul>
+            <li><a href="services.html?cat=cleaning">Home Cleaning</a></li>
+            <li><a href="services.html?cat=plumbing">Plumbing</a></li>
+            <li><a href="services.html?cat=electrical">Electrical</a></li>
+            <li><a href="services.html?cat=landscaping">Landscaping</a></li>
+            <li><a href="services.html?cat=tutoring">Tutoring</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li>📍 123 Market Street, San Francisco, CA 94103</li>
+            <li>📞 <a href="tel:+14155550100">+1 (415) 555-0100</a></li>
+            <li>✉️ <a href="mailto:hello@serveease.com">hello@serveease.com</a></li>
+            <li>🕐 Mon – Fri: 8am – 8pm PST</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-container">
+          <p class="footer-copy">&copy; 2024 ServeEase. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== LOGIN MODAL ===== -->
+    <div class="modal-overlay" id="login-modal-overlay" onclick="closeModal('login-modal')"></div>
+    <div class="modal" id="login-modal">
+      <button class="modal-close" onclick="closeModal('login-modal')" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title">Welcome Back</h2>
+        <p class="modal-subtitle">Sign in to your ServeEase account</p>
+      </div>
+      <div class="modal-body">
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input
+              type="email"
+              id="login-email"
+              class="form-control"
+              placeholder="you@example.com"
+              autocomplete="email"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              class="form-control"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:.5rem;">
+            Sign In
+          </button>
+        </form>
+        <p style="text-align:center; margin-top:1rem; font-size:.9rem; color: var(--text-muted);">
+          Don't have an account?
+          <a href="#" style="color: var(--primary);">Sign up free</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/script.js?v=1.0.1"></script>
+  </body>
+</html>

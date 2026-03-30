@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Details – ServeEase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css?v=1.0.1" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">ServeEase</div>
+    <div class="spinner"></div>
+  </div>
+</div>
+<div id="toast-container"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⚡</div>
+      ServeEase
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-nav-login">Login / Sign Up</button>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button class="btn btn-primary btn-sm mt-8 mobile-login-btn" style="align-self:flex-start">Login / Sign Up</button>
+  </div>
+</nav>
+
+<!-- SERVICE DETAIL -->
+<div id="service-detail-container">
+  <div class="service-detail-layout">
+    <!-- LEFT COLUMN -->
+    <div>
+      <!-- Gallery -->
+      <div class="gallery-main" id="gallery-main-img">🧹</div>
+      <div class="gallery-thumbs">
+        <div class="gallery-thumb active" onclick="switchThumb(this,'🧹')">🧹</div>
+        <div class="gallery-thumb" onclick="switchThumb(this,'🏠')">🏠</div>
+        <div class="gallery-thumb" onclick="switchThumb(this,'✨')">✨</div>
+        <div class="gallery-thumb" onclick="switchThumb(this,'🧽')">🧽</div>
+      </div>
+
+      <!-- Title + Meta -->
+      <div class="service-detail-content">
+        <h1 class="service-detail-title" id="detail-service-title">Service Title</h1>
+        <div id="detail-dynamic">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Tabs -->
+        <div class="detail-tabs">
+          <button class="tab-btn active" data-tab="tab-overview">Overview</button>
+          <button class="tab-btn" data-tab="tab-features">What's Included</button>
+          <button class="tab-btn" data-tab="tab-pricing">Pricing</button>
+          <button class="tab-btn" data-tab="tab-reviews">Reviews</button>
+        </div>
+
+        <div id="tab-overview" class="tab-pane active">
+          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:14px;">Our professional team delivers top-quality service with attention to detail. All our specialists are background-checked, trained, and insured. We bring all equipment and supplies needed.</p>
+          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:14px;">The service typically takes 2–4 hours depending on the size of your home. You can be present or step out — whatever you prefer.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
+            <div style="background:var(--background);border-radius:var(--radius-md);padding:16px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:6px;">⏱️</div>
+              <div style="font-weight:700;font-size:0.9rem;">2–4 Hours</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);">Typical Duration</div>
+            </div>
+            <div style="background:var(--background);border-radius:var(--radius-md);padding:16px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:6px;">👥</div>
+              <div style="font-weight:700;font-size:0.9rem;">2 Professionals</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);">Assigned Team</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-features" class="tab-pane">
+          <ul class="feature-list">
+            <li class="feature-item"><span class="check">✅</span> All cleaning equipment and eco-friendly supplies provided</li>
+            <li class="feature-item"><span class="check">✅</span> Background-checked and insured professionals</li>
+            <li class="feature-item"><span class="check">✅</span> Full coverage: all rooms, bathrooms, kitchen</li>
+            <li class="feature-item"><span class="check">✅</span> Vacuuming, mopping, dusting, and surface sanitization</li>
+            <li class="feature-item"><span class="check">✅</span> Window sills and door handles included</li>
+            <li class="feature-item"><span class="check">✅</span> Post-service quality check by supervisor</li>
+            <li class="feature-item"><span class="check">✅</span> 100% satisfaction guarantee — re-clean if needed</li>
+          </ul>
+          <div style="margin-top:20px;padding:14px;background:rgba(239,68,68,0.06);border-radius:var(--radius-md);border-left:3px solid #EF4444;">
+            <p style="font-size:0.85rem;color:#991B1B;font-weight:500;">❌ Not included: Laundry, carpet shampooing, or exterior windows. Ask about add-on packages.</p>
+          </div>
+        </div>
+
+        <div id="tab-pricing" class="tab-pane">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;padding:14px 16px;background:rgba(99,102,241,0.06);border-radius:var(--radius-md);border:1px solid rgba(99,102,241,0.15);">
+              <div>
+                <div style="font-weight:700;margin-bottom:3px;">Standard Clean</div>
+                <div style="font-size:0.82rem;color:var(--text-muted);">Up to 2 bedrooms, 1 bathroom</div>
+              </div>
+              <div style="font-size:1.3rem;font-weight:800;color:var(--primary);">$49</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:14px 16px;background:var(--background);border-radius:var(--radius-md);border:1px solid var(--border);">
+              <div>
+                <div style="font-weight:700;margin-bottom:3px;">Premium Clean</div>
+                <div style="font-size:0.82rem;color:var(--text-muted);">Up to 4 bedrooms, 2 bathrooms</div>
+              </div>
+              <div style="font-size:1.3rem;font-weight:800;color:var(--primary);">$79</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:14px 16px;background:var(--background);border-radius:var(--radius-md);border:1px solid var(--border);">
+              <div>
+                <div style="font-weight:700;margin-bottom:3px;">Deep Clean</div>
+                <div style="font-size:0.82rem;color:var(--text-muted);">Full home, inside appliances included</div>
+              </div>
+              <div style="font-size:1.3rem;font-weight:800;color:var(--primary);">$129</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-reviews" class="tab-pane">
+          <div style="display:flex;align-items:center;gap:24px;margin-bottom:24px;padding:20px;background:var(--background);border-radius:var(--radius-md);">
+            <div style="text-align:center;">
+              <div style="font-size:3.5rem;font-weight:800;color:var(--primary);line-height:1;">4.9</div>
+              <div style="color:#F59E0B;font-size:20px;letter-spacing:2px;">★★★★★</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">312 reviews</div>
+            </div>
+            <div style="flex:1;">
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;font-size:0.8rem;">
+                  <span style="width:30px;color:var(--text-muted);">5★</span>
+                  <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:82%;height:100%;background:#F59E0B;border-radius:3px;"></div></div>
+                  <span style="width:30px;color:var(--text-muted);text-align:right;">82%</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:0.8rem;">
+                  <span style="width:30px;color:var(--text-muted);">4★</span>
+                  <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:12%;height:100%;background:#F59E0B;border-radius:3px;"></div></div>
+                  <span style="width:30px;color:var(--text-muted);text-align:right;">12%</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:0.8rem;">
+                  <span style="width:30px;color:var(--text-muted);">3★</span>
+                  <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:4%;height:100%;background:#F59E0B;border-radius:3px;"></div></div>
+                  <span style="width:30px;color:var(--text-muted);text-align:right;">4%</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:0.8rem;">
+                  <span style="width:30px;color:var(--text-muted);">2★</span>
+                  <div style="flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:2%;height:100%;background:#F59E0B;border-radius:3px;"></div></div>
+                  <span style="width:30px;color:var(--text-muted);text-align:right;">2%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-avatar" style="background:linear-gradient(135deg,#6366F1,#818CF8)">S</div>
+              <div class="reviewer-info">
+                <h5>Sarah M.</h5>
+                <p>March 2026 · Verified Customer</p>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-text">Absolutely amazing service! The team arrived on time, was super professional, and my apartment looks brand new. Will definitely book again next month.</div>
+          </div>
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-avatar" style="background:linear-gradient(135deg,#22C55E,#16A34A)">J</div>
+              <div class="reviewer-info">
+                <h5>James K.</h5>
+                <p>February 2026 · Verified Customer</p>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <div class="review-text">I've used ServeEase three times now and the quality is consistently excellent. The eco-friendly products leave no smell, which I love. Top marks!</div>
+          </div>
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-avatar" style="background:linear-gradient(135deg,#F59E0B,#D97706)">P</div>
+              <div class="reviewer-info">
+                <h5>Priya N.</h5>
+                <p>February 2026 · Verified Customer</p>
+              </div>
+              <div class="review-stars">★★★★☆</div>
+            </div>
+            <div class="review-text">Great service overall. Only minor thing was they arrived 15 mins late, but they called ahead to let me know. The cleaning itself was thorough and I'm happy.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN - BOOKING WIDGET -->
+    <div>
+      <div class="booking-widget">
+        <div class="widget-price">
+          <span class="price" id="widget-price">$49</span>
+          <span class="unit" id="widget-unit">/ per session</span>
+        </div>
+        <div class="widget-rating">
+          <span style="color:#F59E0B;font-size:18px;">★★★★★</span>
+          <span style="font-weight:700;font-size:0.9rem;">4.9</span>
+          <span style="color:var(--text-muted);font-size:0.85rem;">(312 reviews)</span>
+        </div>
+        <div class="widget-features">
+          <div class="widget-feature"><span class="icon">✅</span> Verified professional</div>
+          <div class="widget-feature"><span class="icon">✅</span> All supplies included</div>
+          <div class="widget-feature"><span class="icon">✅</span> Same-day availability</div>
+          <div class="widget-feature"><span class="icon">✅</span> 100% money-back guarantee</div>
+          <div class="widget-feature"><span class="icon">✅</span> Free re-service if unhappy</div>
+        </div>
+        <button class="btn btn-primary btn-book-service" style="width:100%;justify-content:center;font-size:1rem;">
+          📅 Book This Service
+        </button>
+        <div style="margin-top:12px;text-align:center;">
+          <button class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;" onclick="showToast('Added to wishlist!','success')">
+            ❤️ Save to Wishlist
+          </button>
+        </div>
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border-light);">
+          <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;">
+            <span>🛡️</span> Secure booking — cancel free up to 24 hrs
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);">
+            <span>💳</span> Pay after service is complete
+          </div>
+        </div>
+      </div>
+
+      <!-- Provider card -->
+      <div style="background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);padding:20px;margin-top:16px;">
+        <h4 style="font-weight:700;margin-bottom:14px;font-size:0.95rem;">About Your Provider</h4>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#6366F1,#818CF8);display:flex;align-items:center;justify-content:center;font-size:20px;color:white;font-weight:800;">C</div>
+          <div>
+            <div style="font-weight:700;font-size:0.95rem;">CleanPro Team</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);">Top-rated since 2020</div>
+          </div>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="color:#F59E0B;font-size:14px;">★★★★★</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);">4.95 avg</div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-size:0.85rem;color:var(--text-secondary);line-height:1.6;">
+          CleanPro Team has completed 1,200+ bookings with a 4.95 rating. Fully insured, background-verified, and loved by customers.
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+          <span style="background:var(--background);padding:4px 10px;border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--text-secondary);">✅ Background Checked</span>
+          <span style="background:var(--background);padding:4px 10px;border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--text-secondary);">🛡️ Insured</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Services -->
+  <section class="section section-alt" style="margin-top:0;">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title" style="font-size:1.6rem;">You Might Also Like</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" onclick="window.location.href='service-details.html?id=7'">
+          <div class="service-card-img" style="background:#F0FDF4">
+            <div class="img-placeholder">🐛</div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-cat">CLEANING</div>
+            <h3 class="service-card-title">Pest Control</h3>
+            <p class="service-card-desc">Safe and effective pest control for all types of pests.</p>
+            <div class="service-card-footer">
+              <div class="service-price"><strong>$89</strong><span>per session</span></div>
+              <div class="service-rating"><span class="star">★</span> 4.7</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" onclick="window.location.href='service-details.html?id=2'">
+          <div class="service-card-img" style="background:#EFF6FF">
+            <div class="img-placeholder">🔧</div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-cat">PLUMBING</div>
+            <h3 class="service-card-title">Plumbing Repair</h3>
+            <p class="service-card-desc">Expert plumbing solutions for your home.</p>
+            <div class="service-card-footer">
+              <div class="service-price"><strong>$69</strong><span>per visit</span></div>
+              <div class="service-rating"><span class="star">★</span> 4.7</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" onclick="window.location.href='service-details.html?id=5'">
+          <div class="service-card-img" style="background:#EFF6FF">
+            <div class="img-placeholder">❄️</div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-cat">APPLIANCE</div>
+            <h3 class="service-card-title">AC Service & Repair</h3>
+            <p class="service-card-desc">AC cleaning, gas refill, and repairs. All brands.</p>
+            <div class="service-card-footer">
+              <div class="service-price"><strong>$59</strong><span>per unit</span></div>
+              <div class="service-rating"><span class="star">★</span> 4.8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">⚡ ServeEase</span>
+      <p>Your trusted marketplace for on-demand home services.</p>
+      <div class="footer-social">
+        <a class="social-link" href="#">🐦</a>
+        <a class="social-link" href="#">📸</a>
+        <a class="social-link" href="#">👤</a>
+        <a class="social-link" href="#">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="booking.html">Book a Service</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span>✉️</span><span>hello@serveease.com</span></div>
+      <div class="footer-contact-item"><span>📞</span><span>+1 (800) 555-0199</span></div>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.html">Help Center</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ServeEase. All rights reserved.</span>
+    <span>🛡️ Verified Professionals &nbsp;|&nbsp; Secure Payments</span>
+  </div>
+</footer>
+
+<!-- Login Modal -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login-modal')">✕</button>
+    <div class="modal-icon" style="background:rgba(99,102,241,0.1);">⚡</div>
+    <h2>Welcome to ServeEase</h2>
+    <p>Sign in to manage your bookings.</p>
+    <form id="login-form">
+      <div class="form-group mb-16">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group mb-24">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Login →</button>
+    </form>
+  </div>
+</div>
+
+<script src="./js/script.js?v=1.0.1"></script>
+<script>
+  function switchThumb(thumb, emoji) {
+    document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+    document.getElementById('gallery-main-img').textContent = emoji;
+  }
+</script>
+</body>
+</html>

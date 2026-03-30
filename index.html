@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServeEase – Book Home Services Instantly</title>
+  <meta name="description" content="ServeEase is the fastest way to book trusted home services: cleaning, plumbing, electrical, AC repair, beauty, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css?v=1.0.1" />
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-icon-wrap">
+      <div class="loader-icon">⚡</div>
+      <div class="loader-icon-ring"></div>
+    </div>
+    <div class="loader-brand">ServeEase</div>
+    <div class="loader-tagline">Book home services instantly</div>
+    <div class="loader-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="loader-progress-bar">
+    <div class="loader-progress-fill" id="loader-fill"></div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- ====== NAVBAR ====== -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⚡</div>
+      ServeEase
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-nav-login">Login / Sign Up</button>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button class="btn btn-primary btn-sm mt-8 mobile-login-btn" style="align-self:flex-start">Login / Sign Up</button>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content fade-in-left">
+      <div class="hero-badge reveal-up">⚡ Trusted by 50,000+ customers</div>
+      <h1 class="hero-title">
+        Book Home Services<br />
+        <span class="highlight reveal-highlight">Instantly, Reliably</span>
+      </h1>
+      <p class="hero-desc">
+        From cleaning to plumbing, electrical to beauty — find verified professionals and book in under 60 seconds. 100% satisfaction guaranteed.
+      </p>
+      <div class="hero-actions">
+        <a href="services.html" class="btn btn-primary btn-lg">
+          🚀 Browse Services
+        </a>
+        <a href="about.html" class="btn btn-outline btn-lg">Learn More</a>
+      </div>
+      <div class="hero-stats reveal-up">
+        <div class="stat-item">
+          <span class="stat-number">50K+</span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">12+</span>
+          <span class="stat-label">Service Types</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.8★</span>
+          <span class="stat-label">Avg Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual fade-in-right">
+      <div class="hero-card">
+        <div class="hero-card-icon bg-purple-soft">🧹</div>
+        <div class="hero-card-info">
+          <h4>Home Cleaning</h4>
+          <p>Deep cleaning service</p>
+        </div>
+        <div class="hero-card-rating">
+          <div class="stars">★★★★★</div>
+          <span>4.9 / 5.0</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon bg-blue-soft">⚡</div>
+        <div class="hero-card-info">
+          <h4>Electrician</h4>
+          <p>Licensed professional</p>
+        </div>
+        <div class="hero-card-rating">
+          <div class="stars">★★★★★</div>
+          <span>4.8 / 5.0</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon bg-green-soft">💅</div>
+        <div class="hero-card-info">
+          <h4>Beauty at Home</h4>
+          <p>Salon experience</p>
+        </div>
+        <div class="hero-card-rating">
+          <div class="stars">★★★★★</div>
+          <span>4.9 / 5.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CATEGORIES ====== -->
+<section class="section section-alt">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag reveal-up">📂 Browse by Category</div>
+      <h2 class="section-title reveal-up">What do you need today?</h2>
+      <p class="section-subtitle reveal-up">Explore our wide range of professional services and find exactly what you're looking for.</p>
+    </div>
+    <div class="categories-grid">
+      <a href="services.html?cat=cleaning" class="category-card fade-in delay-1">
+        <span class="cat-icon">🧹</span>
+        <div class="cat-name">Cleaning</div>
+        <div class="cat-count">8 services</div>
+      </a>
+      <a href="services.html?cat=plumbing" class="category-card fade-in delay-2">
+        <span class="cat-icon">🔧</span>
+        <div class="cat-name">Plumbing</div>
+        <div class="cat-count">5 services</div>
+      </a>
+      <a href="services.html?cat=electrical" class="category-card fade-in delay-3">
+        <span class="cat-icon">⚡</span>
+        <div class="cat-name">Electrical</div>
+        <div class="cat-count">6 services</div>
+      </a>
+      <a href="services.html?cat=auto" class="category-card fade-in delay-4">
+        <span class="cat-icon">🚗</span>
+        <div class="cat-name">Auto</div>
+        <div class="cat-count">4 services</div>
+      </a>
+      <a href="services.html?cat=appliance" class="category-card fade-in delay-1">
+        <span class="cat-icon">❄️</span>
+        <div class="cat-name">Appliances</div>
+        <div class="cat-count">7 services</div>
+      </a>
+      <a href="services.html?cat=beauty" class="category-card fade-in delay-2">
+        <span class="cat-icon">💅</span>
+        <div class="cat-name">Beauty</div>
+        <div class="cat-count">10 services</div>
+      </a>
+      <a href="services.html?cat=painting" class="category-card fade-in delay-3">
+        <span class="cat-icon">🎨</span>
+        <div class="cat-name">Painting</div>
+        <div class="cat-count">3 services</div>
+      </a>
+      <a href="services.html?cat=gardening" class="category-card fade-in delay-4">
+        <span class="cat-icon">🌿</span>
+        <div class="cat-name">Gardening</div>
+        <div class="cat-count">4 services</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== POPULAR SERVICES ====== -->
+<section class="section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag reveal-up">🔥 Top Picks</div>
+      <h2 class="section-title reveal-up">Most Popular Services</h2>
+      <p class="section-subtitle reveal-up">Loved and trusted by thousands of customers across the country.</p>
+    </div>
+    <div class="services-grid" id="popular-services-grid">
+      <!-- Populated by JS -->
+    </div>
+    <div class="reveal-up" style="text-align:center;margin-top:40px;">
+      <a href="services.html" class="btn btn-primary">View All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COUNTERS ====== -->
+<section class="counters-section">
+  <div class="counters-grid">
+    <div class="counter-item fade-in">
+      <span class="counter-number" data-target="50000" data-suffix="+">0</span>
+      <span class="counter-label">Happy Customers</span>
+    </div>
+    <div class="counter-item fade-in delay-1">
+      <span class="counter-number" data-target="2500" data-suffix="+">0</span>
+      <span class="counter-label">Verified Professionals</span>
+    </div>
+    <div class="counter-item fade-in delay-2">
+      <span class="counter-number" data-target="120000" data-suffix="+">0</span>
+      <span class="counter-label">Bookings Completed</span>
+    </div>
+    <div class="counter-item fade-in delay-3">
+      <span class="counter-number" data-target="98" data-suffix="%">0</span>
+      <span class="counter-label">Satisfaction Rate</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HOW IT WORKS ====== -->
+<section class="section section-alt">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag reveal-up">⚙️ Process</div>
+      <h2 class="section-title reveal-up">How ServeEase Works</h2>
+      <p class="section-subtitle reveal-up">Book a professional in three simple steps. It really is this easy.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-in delay-1">
+        <div class="step-number">1</div>
+        <span class="step-icon">🔍</span>
+        <h3>Browse & Choose</h3>
+        <p>Search from 60+ services across 12 categories. Filter by type and read verified reviews.</p>
+      </div>
+      <div class="step-card fade-in delay-2">
+        <div class="step-number">2</div>
+        <span class="step-icon">📅</span>
+        <h3>Book Instantly</h3>
+        <p>Pick a convenient date and time. Fill out the form and confirm your booking in seconds.</p>
+      </div>
+      <div class="step-card fade-in delay-3">
+        <div class="step-number">3</div>
+        <span class="step-icon">👨‍🔧</span>
+        <h3>Professional Arrives</h3>
+        <p>A verified, background-checked professional shows up at your door, ready to work.</p>
+      </div>
+      <div class="step-card fade-in delay-4">
+        <div class="step-number">4</div>
+        <span class="step-icon">⭐</span>
+        <h3>Rate & Review</h3>
+        <p>Job done? Rate your provider and help our community find the best professionals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section class="section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-tag reveal-up">💬 Testimonials</div>
+      <h2 class="section-title reveal-up">What Our Customers Say</h2>
+      <p class="section-subtitle reveal-up">Real stories from real people who love using ServeEase.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The cleaning team was phenomenal — on time, thorough, and left my home spotless. Booking took less than a minute. Will definitely use again!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#6366F1,#818CF8)">S</div>
+          <div class="author-info">
+            <h4>Sarah Mitchell</h4>
+            <p>Homeowner, New York</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I had a plumbing emergency on a Sunday and ServeEase had someone at my house within 2 hours. Absolutely outstanding service, highly recommend!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#22C55E,#16A34A)">J</div>
+          <div class="author-info">
+            <h4>James Carter</h4>
+            <p>Apartment Owner, Chicago</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in delay-3">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The beauty service at home is a game-changer! My stylist was professional, friendly, and did an amazing job. Way better than going to a salon."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#EC4899,#BE185D)">A</div>
+          <div class="author-info">
+            <h4>Amelia Turner</h4>
+            <p>Entrepreneur, Los Angeles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA BANNER ====== -->
+<section style="background:linear-gradient(135deg,#6366F1,#22C55E);padding:64px 24px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <h2 class="reveal-scale" style="color:white;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:14px;letter-spacing:-0.02em;">
+      Ready to book your first service?
+    </h2>
+    <p class="reveal-up" style="color:rgba(255,255,255,0.88);font-size:1rem;margin-bottom:28px;line-height:1.7;transition-delay:0.15s">
+      Join 50,000+ satisfied customers. First-time users get 20% off their first booking.
+    </p>
+    <a href="services.html" class="btn reveal-up" style="background:white;color:#6366F1;font-weight:700;font-size:1rem;padding:14px 36px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,0.15);transition-delay:0.28s">
+      Get Started – It's Free →
+    </a>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">⚡ ServeEase</span>
+      <p>Your trusted marketplace for on-demand home services. Fast, reliable, and affordable professionals at your fingertips.</p>
+      <div class="footer-social">
+        <a class="social-link" href="#" aria-label="Twitter">🐦</a>
+        <a class="social-link" href="#" aria-label="Instagram">📸</a>
+        <a class="social-link" href="#" aria-label="Facebook">👤</a>
+        <a class="social-link" href="#" aria-label="LinkedIn">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="booking.html">Book a Service</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html?cat=cleaning">Home Cleaning</a></li>
+        <li><a href="services.html?cat=plumbing">Plumbing</a></li>
+        <li><a href="services.html?cat=electrical">Electrical</a></li>
+        <li><a href="services.html?cat=beauty">Beauty</a></li>
+        <li><a href="services.html?cat=auto">Car Repair</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span>📍</span><span>123 Main Street, New York, NY 10001</span></div>
+      <div class="footer-contact-item"><span>📞</span><span>+1 (800) 555-0199</span></div>
+      <div class="footer-contact-item"><span>✉️</span><span>hello@serveease.com</span></div>
+      <div class="footer-contact-item"><span>🕐</span><span>Mon–Sat: 7 AM – 9 PM</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ServeEase. All rights reserved.</span>
+    <span>🛡️ Verified Professionals &nbsp;|&nbsp; Secure Payments &nbsp;|&nbsp; 100% Guarantee</span>
+  </div>
+</footer>
+
+<!-- ====== LOGIN MODAL ====== -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login-modal')">✕</button>
+    <div class="modal-icon" style="background:rgba(99,102,241,0.1);">⚡</div>
+    <h2>Welcome to ServeEase</h2>
+    <p>Sign in to manage your bookings and access exclusive deals.</p>
+    <form id="login-form">
+      <div class="form-group mb-16">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group mb-24">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Login →</button>
+      <p style="text-align:center;margin-top:14px;font-size:0.85rem;color:var(--text-muted);">
+        Don't have an account? <a href="#" style="color:var(--primary);font-weight:600;" onclick="showToast('Sign-up coming soon!','info');return false;">Sign up free</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+<script src="./js/script.js?v=1.0.1"></script>
+</body>
+</html>

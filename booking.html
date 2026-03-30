@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Service – ServeEase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css?v=1.0.1" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">ServeEase</div>
+    <div class="spinner"></div>
+  </div>
+</div>
+<div id="toast-container"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⚡</div>
+      ServeEase
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-nav-login">Login / Sign Up</button>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button class="btn btn-primary btn-sm mt-8 mobile-login-btn" style="align-self:flex-start">Login / Sign Up</button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="services.html">Services</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Book a Service</span>
+    </div>
+    <h1 class="fade-in">📅 Book a <span class="grad-text">Service</span></h1>
+    <p class="fade-in delay-1">Fill in the details below and we'll send a verified professional to your door.</p>
+  </div>
+</div>
+
+<!-- BOOKING FORM -->
+<div class="booking-layout">
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start;">
+
+    <!-- FORM -->
+    <div class="form-card fade-in">
+
+      <!-- Step Indicator -->
+      <div style="display:flex;align-items:center;gap:0;margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:8px;flex:1;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;flex-shrink:0;">1</div>
+          <span style="font-size:0.85rem;font-weight:600;color:var(--primary);">Your Info</span>
+        </div>
+        <div style="flex:1;height:2px;background:linear-gradient(to right,var(--primary),var(--border));margin:0 8px;"></div>
+        <div style="display:flex;align-items:center;gap:8px;flex:1;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;flex-shrink:0;">2</div>
+          <span style="font-size:0.85rem;font-weight:600;color:var(--primary);">Service & Schedule</span>
+        </div>
+        <div style="flex:1;height:2px;background:var(--border);margin:0 8px;"></div>
+        <div style="display:flex;align-items:center;gap:8px;flex:1;">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--border);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;flex-shrink:0;">3</div>
+          <span style="font-size:0.85rem;font-weight:600;color:var(--text-muted);">Confirm</span>
+        </div>
+      </div>
+
+      <form id="booking-form" novalidate>
+
+        <!-- Section 1: Personal Info -->
+        <div class="form-section-title">👤 Personal Information</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="booking-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="booking-name" class="form-input" placeholder="John Smith" required autocomplete="name" />
+            <span class="form-error" id="booking-name-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-email">Email Address <span class="required">*</span></label>
+            <input type="email" id="booking-email" class="form-input" placeholder="john@email.com" required autocomplete="email" />
+            <span class="form-error" id="booking-email-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="booking-phone" class="form-input" placeholder="+1 (555) 000-0000" required autocomplete="tel" />
+            <span class="form-error" id="booking-phone-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-altphone">Alternate Phone</label>
+            <input type="tel" id="booking-altphone" class="form-input" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+          </div>
+        </div>
+
+        <hr class="form-divider" />
+
+        <!-- Section 2: Service Details -->
+        <div class="form-section-title">🔧 Service Details</div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label class="form-label" for="booking-service">Service Type <span class="required">*</span></label>
+            <select id="booking-service" class="form-select" required>
+              <option value="">— Select a service —</option>
+              <optgroup label="🧹 Cleaning">
+                <option value="Home Deep Cleaning">Home Deep Cleaning – $49</option>
+                <option value="Pest Control">Pest Control – $89</option>
+              </optgroup>
+              <optgroup label="🔧 Plumbing">
+                <option value="Plumbing Repair">Plumbing Repair – $69</option>
+              </optgroup>
+              <optgroup label="⚡ Electrical">
+                <option value="Electrical Services">Electrical Services – $79</option>
+              </optgroup>
+              <optgroup label="🚗 Auto">
+                <option value="Car Repair & Servicing">Car Repair & Servicing – $99</option>
+              </optgroup>
+              <optgroup label="❄️ Appliance">
+                <option value="AC Service & Repair">AC Service & Repair – $59</option>
+                <option value="Appliance Repair">Appliance Repair – $50</option>
+              </optgroup>
+              <optgroup label="💅 Beauty">
+                <option value="Beauty & Spa at Home">Beauty & Spa at Home – $39</option>
+                <option value="Massage Therapy">Massage Therapy – $55/hr</option>
+              </optgroup>
+              <optgroup label="🎨 Other">
+                <option value="Painting Services">Painting Services – $129/day</option>
+                <option value="Furniture Assembly">Furniture Assembly – $44</option>
+                <option value="Garden & Lawn Care">Garden & Lawn Care – $35</option>
+              </optgroup>
+            </select>
+            <span class="form-error" id="booking-service-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-date">Preferred Date <span class="required">*</span></label>
+            <input type="date" id="booking-date" class="form-input" required />
+            <span class="form-error" id="booking-date-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-time">Preferred Time <span class="required">*</span></label>
+            <select id="booking-time" class="form-select" required>
+              <option value="">— Select time —</option>
+              <option value="07:00 AM">07:00 AM</option>
+              <option value="08:00 AM">08:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="01:00 PM">01:00 PM</option>
+              <option value="02:00 PM">02:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="05:00 PM">05:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+              <option value="07:00 PM">07:00 PM</option>
+            </select>
+            <span class="form-error" id="booking-time-error"></span>
+          </div>
+        </div>
+
+        <hr class="form-divider" />
+
+        <!-- Section 3: Address -->
+        <div class="form-section-title">📍 Service Address</div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label class="form-label" for="booking-address">Street Address <span class="required">*</span></label>
+            <input type="text" id="booking-address" class="form-input" placeholder="123 Main Street, Apt 4B" required autocomplete="street-address" />
+            <span class="form-error" id="booking-address-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-city">City <span class="required">*</span></label>
+            <input type="text" id="booking-city" class="form-input" placeholder="New York" required />
+            <span class="form-error" id="booking-city-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-zip">ZIP / Postal Code</label>
+            <input type="text" id="booking-zip" class="form-input" placeholder="10001" />
+          </div>
+        </div>
+
+        <hr class="form-divider" />
+
+        <!-- Section 4: Additional Notes -->
+        <div class="form-section-title">📝 Additional Information</div>
+        <div class="form-group" style="margin-bottom:20px;">
+          <label class="form-label" for="booking-notes">Special Instructions / Notes</label>
+          <textarea id="booking-notes" class="form-textarea" placeholder="E.g. Please bring extra cleaning supplies, ring doorbell on arrival, have a pet — please be careful..." rows="4"></textarea>
+          <span class="form-hint">Optional — helps the professional prepare for your booking.</span>
+        </div>
+
+        <!-- Agreement -->
+        <div style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--background);border-radius:var(--radius-md);margin-bottom:24px;">
+          <input type="checkbox" id="booking-agree" style="margin-top:3px;width:16px;height:16px;accent-color:var(--primary);flex-shrink:0;" required />
+          <label for="booking-agree" style="font-size:0.87rem;color:var(--text-secondary);cursor:pointer;line-height:1.6;">
+            I agree to ServeEase's <a href="#" style="color:var(--primary);font-weight:600;">Terms of Service</a> and <a href="#" style="color:var(--primary);font-weight:600;">Privacy Policy</a>. I understand cancellation is free up to 24 hours before the scheduled time.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
+          🚀 Confirm Booking
+        </button>
+        <p style="text-align:center;margin-top:12px;font-size:0.82rem;color:var(--text-muted);">
+          🔒 Secure & encrypted · Confirmation sent to your email
+        </p>
+      </form>
+    </div>
+
+    <!-- SIDEBAR SUMMARY -->
+    <div class="fade-in delay-2" style="position:sticky;top:88px;">
+      <div style="background:var(--surface);border-radius:var(--radius-xl);border:1px solid var(--border);padding:24px;box-shadow:var(--shadow-sm);">
+        <h3 style="font-weight:800;margin-bottom:16px;font-size:1rem;">🧾 Booking Summary</h3>
+        <div style="display:flex;flex-direction:column;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--border);">
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:var(--text-muted);">Service</span>
+            <span style="font-weight:600;text-align:right;max-width:140px;" id="summary-service">—</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:var(--text-muted);">Date</span>
+            <span style="font-weight:600;" id="summary-date">—</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:var(--text-muted);">Time</span>
+            <span style="font-weight:600;" id="summary-time">—</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.88rem;">
+            <span style="color:var(--text-muted);">Address</span>
+            <span style="font-weight:600;text-align:right;max-width:140px;" id="summary-address">—</span>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:14px;font-size:1rem;">
+          <span style="font-weight:700;">Total</span>
+          <span style="font-weight:800;color:var(--primary);font-size:1.2rem;" id="summary-price">—</span>
+        </div>
+        <div style="margin-top:14px;padding:10px;background:rgba(34,197,94,0.08);border-radius:var(--radius-sm);border:1px solid rgba(34,197,94,0.2);font-size:0.8rem;color:var(--secondary-dark);font-weight:600;display:flex;align-items:center;gap:6px;">
+          🎁 20% off your first booking applied!
+        </div>
+      </div>
+
+      <!-- Trust signals -->
+      <div style="background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);padding:20px;margin-top:14px;">
+        <h4 style="font-weight:700;font-size:0.9rem;margin-bottom:12px;">Why book with us?</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:10px;font-size:0.83rem;color:var(--text-secondary);align-items:flex-start;">
+            <span style="color:var(--secondary);">✅</span> Background-verified professionals
+          </div>
+          <div style="display:flex;gap:10px;font-size:0.83rem;color:var(--text-secondary);align-items:flex-start;">
+            <span style="color:var(--secondary);">✅</span> Free cancellation up to 24 hrs before
+          </div>
+          <div style="display:flex;gap:10px;font-size:0.83rem;color:var(--text-secondary);align-items:flex-start;">
+            <span style="color:var(--secondary);">✅</span> Pay after service is complete
+          </div>
+          <div style="display:flex;gap:10px;font-size:0.83rem;color:var(--text-secondary);align-items:flex-start;">
+            <span style="color:var(--secondary);">✅</span> 100% satisfaction guarantee
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING CONFIRMATION MODAL -->
+<div class="modal-overlay" id="booking-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('booking-modal')">✕</button>
+    <div class="modal-icon">🎉</div>
+    <h2>Booking Confirmed!</h2>
+    <p>Your service has been booked successfully. A confirmed professional will be at your door on time.</p>
+    <div class="modal-booking-details">
+      <div class="modal-detail-row">
+        <span class="label">Booking ID</span>
+        <span class="value" id="modal-booking-id"></span>
+      </div>
+      <div class="modal-detail-row">
+        <span class="label">Service</span>
+        <span class="value" id="modal-service-name"></span>
+      </div>
+      <div class="modal-detail-row">
+        <span class="label">Date</span>
+        <span class="value" id="modal-booking-date"></span>
+      </div>
+      <div class="modal-detail-row">
+        <span class="label">Time</span>
+        <span class="value" id="modal-booking-time"></span>
+      </div>
+      <div class="modal-detail-row">
+        <span class="label">Customer</span>
+        <span class="value" id="modal-booking-name"></span>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="dashboard.html" class="btn btn-primary" style="flex:1;justify-content:center;">View Dashboard</a>
+      <button class="btn btn-ghost" style="flex:1;justify-content:center;" onclick="closeModal('booking-modal');window.location.href='services.html'">Book Another</button>
+    </div>
+    <p style="text-align:center;margin-top:14px;font-size:0.82rem;color:var(--text-muted);">📧 Confirmation sent to your email</p>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login-modal')">✕</button>
+    <div class="modal-icon" style="background:rgba(99,102,241,0.1);">⚡</div>
+    <h2>Welcome to ServeEase</h2>
+    <p>Sign in to manage your bookings.</p>
+    <form id="login-form">
+      <div class="form-group mb-16">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group mb-24">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Login →</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" style="margin-top:60px;">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">⚡ ServeEase</span>
+      <p>Your trusted marketplace for on-demand home services.</p>
+      <div class="footer-social">
+        <a class="social-link" href="#">🐦</a>
+        <a class="social-link" href="#">📸</a>
+        <a class="social-link" href="#">👤</a>
+        <a class="social-link" href="#">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span>✉️</span><span>hello@serveease.com</span></div>
+      <div class="footer-contact-item"><span>📞</span><span>+1 (800) 555-0199</span></div>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.html">Help Center</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ServeEase. All rights reserved.</span>
+    <span>🛡️ Secure Payments &nbsp;|&nbsp; 100% Guarantee</span>
+  </div>
+</footer>
+
+<script src="./js/script.js?v=1.0.1"></script>
+<script>
+  // Live booking summary update
+  function updateSummary() {
+    const service = document.getElementById('booking-service')?.value || '—';
+    const date = document.getElementById('booking-date')?.value;
+    const time = document.getElementById('booking-time')?.value || '—';
+    const address = document.getElementById('booking-address')?.value || '—';
+
+    document.getElementById('summary-service').textContent = service || '—';
+    document.getElementById('summary-date').textContent = date ? new Date(date + 'T00:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : '—';
+    document.getElementById('summary-time').textContent = time;
+    document.getElementById('summary-address').textContent = address.length > 30 ? address.substring(0, 30) + '...' : address;
+
+    // Price lookup
+    const prices = {
+      'Home Deep Cleaning': '$49', 'Pest Control': '$89', 'Plumbing Repair': '$69',
+      'Electrical Services': '$79', 'Car Repair & Servicing': '$99', 'AC Service & Repair': '$59',
+      'Appliance Repair': '$50', 'Beauty & Spa at Home': '$39', 'Massage Therapy': '$55',
+      'Painting Services': '$129', 'Furniture Assembly': '$44', 'Garden & Lawn Care': '$35'
+    };
+    document.getElementById('summary-price').textContent = prices[service] || '—';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    ['booking-service','booking-date','booking-time','booking-address'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('change', updateSummary);
+      if (el && el.tagName === 'INPUT') el.addEventListener('input', updateSummary);
+    });
+  });
+</script>
+</body>
+</html>

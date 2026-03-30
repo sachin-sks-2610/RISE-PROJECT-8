@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us – ServeEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css?v=1.0.1" />
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div class="loader-overlay" id="loader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">⚡</span>ServeEase
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-ghost btn-sm" id="login-btn">Login</button>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+          <li><a href="#" id="mobile-login-btn">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header-title">Contact Us</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT LAYOUT ===== -->
+    <div class="contact-layout">
+
+      <!-- Info Card -->
+      <div class="contact-info-card fade-in">
+        <h3>Get in Touch</h3>
+        <p>
+          Have a question, feedback, or need help with a booking? Our team is
+          here to help — reach out any way you prefer.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-body">
+              <strong>Address</strong>
+              <span>123 Market Street, San Francisco, CA 94103</span>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-body">
+              <strong>Phone</strong>
+              <span><a href="tel:+14155550100">+1 (415) 555-0100</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">✉️</div>
+            <div class="contact-detail-body">
+              <strong>Email</strong>
+              <span><a href="mailto:hello@serveease.com">hello@serveease.com</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">🕐</div>
+            <div class="contact-detail-body">
+              <strong>Business Hours</strong>
+              <span>Mon – Fri: 8am – 8pm PST</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social-row">
+          <span>Follow Us</span>
+          <div class="contact-socials">
+            <a href="#" aria-label="Facebook" class="contact-social-btn">f</a>
+            <a href="#" aria-label="Twitter" class="contact-social-btn">𝕏</a>
+            <a href="#" aria-label="Instagram" class="contact-social-btn">📷</a>
+            <a href="#" aria-label="LinkedIn" class="contact-social-btn">in</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper fade-in delay-2">
+        <div class="form-card">
+          <h2 class="form-section-title">Send Us a Message</h2>
+          <p class="form-section-subtitle">
+            Fill out the form below and we'll get back to you within one business day.
+          </p>
+
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="contact-first-name">First Name <span class="required-star">*</span></label>
+                <input
+                  type="text"
+                  id="contact-first-name"
+                  name="firstName"
+                  class="form-control"
+                  placeholder="Jane"
+                  required
+                />
+                <span class="form-error" id="error-contact-first-name"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-last-name">Last Name <span class="required-star">*</span></label>
+                <input
+                  type="text"
+                  id="contact-last-name"
+                  name="lastName"
+                  class="form-control"
+                  placeholder="Doe"
+                  required
+                />
+                <span class="form-error" id="error-contact-last-name"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email Address <span class="required-star">*</span></label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                class="form-control"
+                placeholder="jane@example.com"
+                required
+                autocomplete="email"
+              />
+              <span class="form-error" id="error-contact-email"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone Number</label>
+              <input
+                type="tel"
+                id="contact-phone"
+                name="phone"
+                class="form-control"
+                placeholder="+1 (555) 000-0000"
+                autocomplete="tel"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Subject <span class="required-star">*</span></label>
+              <select id="contact-subject" name="subject" class="form-control form-select" required>
+                <option value="" disabled selected>Select a topic…</option>
+                <option value="booking">Booking Inquiry</option>
+                <option value="provider">Become a Provider</option>
+                <option value="billing">Billing / Payment</option>
+                <option value="feedback">Feedback</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="form-error" id="error-contact-subject"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Message <span class="required-star">*</span></label>
+              <textarea
+                id="contact-message"
+                name="message"
+                class="form-control form-textarea"
+                placeholder="Tell us how we can help…"
+                rows="5"
+                required
+              ></textarea>
+              <span class="form-error" id="error-contact-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="contact-consent" name="consent" required />
+                <span class="checkbox-custom"></span>
+                I agree to the <a href="#">Privacy Policy</a> and consent to ServeEase
+                processing my data to respond to this inquiry.
+              </label>
+              <span class="form-error" id="error-contact-consent"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;" id="contact-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== QUICK CONTACT CARDS ===== -->
+    <section class="section" style="background: var(--surface); padding: 60px 24px;">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Quick Help</span>
+          <h2 class="section-title">Other Ways to Reach Us</h2>
+        </div>
+
+        <div class="quick-contact-grid">
+          <div class="quick-contact-card fade-in delay-1">
+            <div class="quick-icon" style="background:#EEF2FF; color:#6366F1;">💬</div>
+            <h3>Live Chat</h3>
+            <p>Chat with our support team in real time during business hours.</p>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Live chat coming soon!','info')">Start Chat</button>
+          </div>
+
+          <div class="quick-contact-card fade-in delay-2">
+            <div class="quick-icon" style="background:#F0FDF4; color:#22C55E;">📧</div>
+            <h3>Email Support</h3>
+            <p>Send an email and we'll get back to you within one business day.</p>
+            <a href="mailto:support@serveease.com" class="btn btn-outline btn-sm">Email Us</a>
+          </div>
+
+          <div class="quick-contact-card fade-in delay-3">
+            <div class="quick-icon" style="background:#FFF7ED; color:#F97316;">📞</div>
+            <h3>Call Us</h3>
+            <p>Speak directly with a support agent Monday through Friday.</p>
+            <a href="tel:+14155550100" class="btn btn-outline btn-sm">Call Now</a>
+          </div>
+
+          <div class="quick-contact-card fade-in delay-4">
+            <div class="quick-icon" style="background:#FDF4FF; color:#A855F7;">📚</div>
+            <h3>Help Center</h3>
+            <p>Browse our knowledge base for answers to common questions.</p>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Help center coming soon!','info')">View Articles</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Quick answers to the questions we hear most often.
+          </p>
+        </div>
+
+        <div class="faq-layout">
+          <div class="faq-list fade-in">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How do I book a service?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Browse our services, pick one you need, and click "Book Now". Fill in
+                  your details, choose a date and time that work for you, and confirm your
+                  booking. You'll receive an email confirmation instantly.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How are service providers vetted?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Every professional goes through a rigorous onboarding: identity
+                  verification, background check, license and insurance validation, and a
+                  skills assessment. Only those who pass all stages are listed on ServeEase.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I cancel or reschedule a booking?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes. You can cancel or reschedule from your dashboard up to 24 hours
+                  before the scheduled service without any fee. Cancellations within 24
+                  hours may be subject to a cancellation fee.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What payment methods are accepted?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We accept all major credit and debit cards (Visa, Mastercard, Amex),
+                  PayPal, Apple Pay, and Google Pay. Payment is processed securely at the
+                  time of booking.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is my personal information secure?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Absolutely. We use bank-grade TLS encryption for all data in transit and
+                  AES-256 encryption for data at rest. We never sell your personal information
+                  to third parties. See our Privacy Policy for full details.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How do I become a service provider on ServeEase?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Use the contact form on this page and select "Become a Provider" as the
+                  subject — or email us at <a href="mailto:providers@serveease.com">providers@serveease.com</a>.
+                  Our team will reach out with next steps typically within 2 business days.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What if I'm not satisfied with the service?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Your satisfaction is guaranteed. If you're unsatisfied, contact us within
+                  48 hours of the completed service. We'll arrange a free re-service or a
+                  full refund, depending on the circumstances.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="faq-sidebar fade-in delay-2">
+            <div class="faq-cta-card">
+              <div class="faq-cta-icon">🤔</div>
+              <h3>Still Have Questions?</h3>
+              <p>
+                Our support team is available Monday – Friday,
+                8am – 8pm PST. We typically respond within a few hours.
+              </p>
+              <a href="tel:+14155550100" class="btn btn-primary" style="width:100%; margin-bottom:12px;">
+                📞 Call Us Now
+              </a>
+              <a href="mailto:hello@serveease.com" class="btn btn-outline" style="width:100%;">
+                ✉️ Send an Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAP SECTION ===== -->
+    <section class="map-section">
+      <div class="map-header fade-in">
+        <h2 class="section-title" style="margin-bottom:8px;">Find Our Office</h2>
+        <p style="color: var(--text-secondary);">123 Market Street, San Francisco, CA 94103</p>
+      </div>
+      <div class="map-placeholder">
+        <div class="map-placeholder-inner">
+          <div class="map-pin-icon">📍</div>
+          <p>Interactive map would be embedded here.</p>
+          <small>123 Market Street, San Francisco, CA 94103</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content fade-in">
+          <h2 class="cta-title">Ready to get started?</h2>
+          <p class="cta-subtitle">
+            Book your first service today — transparent pricing, vetted professionals,
+            and a satisfaction guarantee.
+          </p>
+          <div class="cta-btns">
+            <a href="services.html" class="btn btn-secondary btn-lg">Browse Services</a>
+            <a href="booking.html" class="btn btn-outline-white btn-lg">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-icon">⚡</span>ServeEase
+          </a>
+          <p class="footer-tagline">
+            Connecting you with trusted professionals for every home and business need.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="social-link">f</a>
+            <a href="#" aria-label="Twitter" class="social-link">𝕏</a>
+            <a href="#" aria-label="Instagram" class="social-link">📷</a>
+            <a href="#" aria-label="LinkedIn" class="social-link">in</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Services</h4>
+          <ul>
+            <li><a href="services.html?cat=cleaning">Home Cleaning</a></li>
+            <li><a href="services.html?cat=plumbing">Plumbing</a></li>
+            <li><a href="services.html?cat=electrical">Electrical</a></li>
+            <li><a href="services.html?cat=landscaping">Landscaping</a></li>
+            <li><a href="services.html?cat=tutoring">Tutoring</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li>📍 123 Market Street, San Francisco, CA 94103</li>
+            <li>📞 <a href="tel:+14155550100">+1 (415) 555-0100</a></li>
+            <li>✉️ <a href="mailto:hello@serveease.com">hello@serveease.com</a></li>
+            <li>🕐 Mon – Fri: 8am – 8pm PST</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-container">
+          <p class="footer-copy">&copy; 2024 ServeEase. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== LOGIN MODAL ===== -->
+    <div class="modal-overlay" id="login-modal-overlay" onclick="closeModal('login-modal')"></div>
+    <div class="modal" id="login-modal">
+      <button class="modal-close" onclick="closeModal('login-modal')" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title">Welcome Back</h2>
+        <p class="modal-subtitle">Sign in to your ServeEase account</p>
+      </div>
+      <div class="modal-body">
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input
+              type="email"
+              id="login-email"
+              class="form-control"
+              placeholder="you@example.com"
+              autocomplete="email"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              class="form-control"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:.5rem;">
+            Sign In
+          </button>
+        </form>
+        <p style="text-align:center; margin-top:1rem; font-size:.9rem; color: var(--text-muted);">
+          Don't have an account?
+          <a href="#" style="color: var(--primary);">Sign up free</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/script.js?v=1.0.1"></script>
+  </body>
+</html>

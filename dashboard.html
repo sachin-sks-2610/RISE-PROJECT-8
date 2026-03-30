@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – ServeEase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css?v=1.0.1" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">ServeEase</div>
+    <div class="spinner"></div>
+  </div>
+</div>
+<div id="toast-container"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⚡</div>
+      ServeEase
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-nav-login">Login / Sign Up</button>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button class="btn btn-primary btn-sm mt-8 mobile-login-btn" style="align-self:flex-start">Login / Sign Up</button>
+  </div>
+</nav>
+
+<!-- DASHBOARD LAYOUT -->
+<div class="dashboard-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-profile">
+      <div class="sidebar-avatar">JD</div>
+      <div class="sidebar-name">John Doe</div>
+      <div class="sidebar-email">john.doe@email.com</div>
+      <div style="margin-top:10px;">
+        <span style="background:rgba(34,197,94,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:100px;font-size:0.75rem;font-weight:600;">✅ Verified</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="sidebar-nav-item active" data-panel="panel-overview">
+        <span class="nav-icon">🏠</span> Overview
+      </button>
+      <button class="sidebar-nav-item" data-panel="panel-upcoming">
+        <span class="nav-icon">📅</span> Upcoming Bookings
+      </button>
+      <button class="sidebar-nav-item" data-panel="panel-history">
+        <span class="nav-icon">📋</span> Booking History
+      </button>
+      <button class="sidebar-nav-item" data-panel="panel-profile">
+        <span class="nav-icon">👤</span> My Profile
+      </button>
+      <button class="sidebar-nav-item" data-panel="panel-settings">
+        <span class="nav-icon">⚙️</span> Preferences
+      </button>
+      <hr style="border:none;border-top:1px solid var(--border);margin:12px 0;" />
+      <a href="booking.html" class="sidebar-nav-item" style="color:var(--secondary);text-decoration:none;">
+        <span class="nav-icon">➕</span> New Booking
+      </a>
+      <button class="sidebar-nav-item" onclick="showToast('You have been logged out.','info');setTimeout(()=>window.location.href='index.html',1000)">
+        <span class="nav-icon">🚪</span> Logout
+      </button>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main">
+
+    <!-- OVERVIEW PANEL -->
+    <div id="panel-overview" class="dash-panel" style="background:none;border:none;padding:0;">
+      <div class="dashboard-greeting">
+        <h2>Good morning, John! 👋</h2>
+        <p>Here's a summary of your ServeEase activity.</p>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-card fade-in">
+          <div class="stat-card-icon bg-purple-soft">📅</div>
+          <h3 style="color:var(--primary);">2</h3>
+          <p>Upcoming Bookings</p>
+        </div>
+        <div class="stat-card fade-in delay-1">
+          <div class="stat-card-icon bg-green-soft">✅</div>
+          <h3 style="color:var(--secondary-dark);">2</h3>
+          <p>Completed Services</p>
+        </div>
+        <div class="stat-card fade-in delay-2">
+          <div class="stat-card-icon bg-orange-soft">💰</div>
+          <h3 style="color:#D97706;">$295</h3>
+          <p>Total Spent</p>
+        </div>
+        <div class="stat-card fade-in delay-3">
+          <div class="stat-card-icon" style="background:rgba(245,158,11,0.1);">⭐</div>
+          <h3 style="color:#D97706;">4.9</h3>
+          <p>Avg Rating Given</p>
+        </div>
+      </div>
+
+      <!-- Upcoming -->
+      <div class="section-heading">
+        <h3>📅 Upcoming Bookings</h3>
+        <button class="btn btn-ghost btn-sm" onclick="document.querySelector('[data-panel=panel-upcoming]').click()">View All</button>
+      </div>
+      <div class="upcoming-grid" id="dashboard-upcoming">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="section-heading" style="margin-top:8px;">
+        <h3>⚡ Quick Actions</h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:28px;">
+        <a href="booking.html" class="stat-card fade-in" style="text-decoration:none;cursor:pointer;text-align:center;padding:24px;">
+          <div style="font-size:32px;margin-bottom:10px;">➕</div>
+          <div style="font-weight:700;font-size:0.9rem;">New Booking</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Book a service now</div>
+        </a>
+        <a href="services.html" class="stat-card fade-in delay-1" style="text-decoration:none;cursor:pointer;text-align:center;padding:24px;">
+          <div style="font-size:32px;margin-bottom:10px;">🔍</div>
+          <div style="font-weight:700;font-size:0.9rem;">Browse Services</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Explore all services</div>
+        </a>
+        <div class="stat-card fade-in delay-2" style="cursor:pointer;text-align:center;padding:24px;" onclick="showToast('Support chat coming soon!','info')">
+          <div style="font-size:32px;margin-bottom:10px;">💬</div>
+          <div style="font-weight:700;font-size:0.9rem;">Get Support</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Chat with our team</div>
+        </div>
+        <a href="contact.html" class="stat-card fade-in delay-3" style="text-decoration:none;cursor:pointer;text-align:center;padding:24px;">
+          <div style="font-size:32px;margin-bottom:10px;">⭐</div>
+          <div style="font-weight:700;font-size:0.9rem;">Leave Review</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Rate a past service</div>
+        </a>
+      </div>
+
+      <!-- Recent activity -->
+      <div class="section-heading">
+        <h3>🕐 Recent Activity</h3>
+      </div>
+      <div class="dash-panel" style="padding:0;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border-light);">
+          <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">✅</div>
+          <div style="flex:1;">
+            <div style="font-size:0.88rem;font-weight:600;">Booking SE-1003 completed</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);">Plumbing Repair · Feb 28, 2026</div>
+          </div>
+          <span class="status-badge completed">Completed</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border-light);">
+          <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">✅</div>
+          <div style="flex:1;">
+            <div style="font-size:0.88rem;font-weight:600;">Booking SE-1004 completed</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);">Beauty & Spa · Feb 14, 2026</div>
+          </div>
+          <span class="status-badge completed">Completed</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border-light);">
+          <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(239,68,68,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">❌</div>
+          <div style="flex:1;">
+            <div style="font-size:0.88rem;font-weight:600;">Booking SE-1005 cancelled</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);">Electrical Services · Feb 5, 2026</div>
+          </div>
+          <span class="status-badge cancelled">Cancelled</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+          <div style="width:40px;height:40px;border-radius:var(--radius-sm);background:rgba(99,102,241,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">📅</div>
+          <div style="flex:1;">
+            <div style="font-size:0.88rem;font-weight:600;">New booking SE-1001 scheduled</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);">Home Deep Cleaning · Mar 15, 2026</div>
+          </div>
+          <span class="status-badge upcoming">Upcoming</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPCOMING BOOKINGS PANEL -->
+    <div id="panel-upcoming" class="dash-panel" style="display:none;background:none;border:none;padding:0;">
+      <div class="dashboard-greeting">
+        <h2>📅 Upcoming Bookings</h2>
+        <p>Manage and track your scheduled services.</p>
+      </div>
+      <div class="upcoming-grid" id="dashboard-upcoming-panel">
+        <!-- Populated dynamically -->
+      </div>
+      <div style="text-align:center;margin-top:12px;">
+        <a href="booking.html" class="btn btn-primary">➕ Book a New Service</a>
+      </div>
+    </div>
+
+    <!-- BOOKING HISTORY PANEL -->
+    <div id="panel-history" class="dash-panel" style="display:none;background:none;border:none;padding:0;">
+      <div class="dashboard-greeting">
+        <h2>📋 Booking History</h2>
+        <p>View all your past and current bookings.</p>
+      </div>
+      <div class="bookings-table-wrap">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-tbody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PROFILE PANEL -->
+    <div id="panel-profile" class="dash-panel" style="display:none;background:none;border:none;padding:0;">
+      <div class="dashboard-greeting">
+        <h2>👤 My Profile</h2>
+        <p>Manage your personal information and preferences.</p>
+      </div>
+
+      <!-- Avatar Section -->
+      <div class="dash-panel" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:white;box-shadow:0 4px 16px rgba(99,102,241,0.3);">JD</div>
+        <div style="flex:1;">
+          <h3 style="font-size:1.1rem;font-weight:800;margin-bottom:4px;">John Doe</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:10px;">Member since January 2025 · 5 bookings</p>
+          <button class="btn btn-ghost btn-sm" onclick="showToast('Photo upload coming soon!','info')">📷 Change Photo</button>
+        </div>
+        <span class="status-badge completed">✅ Verified Account</span>
+      </div>
+
+      <!-- Profile Form -->
+      <div class="dash-panel">
+        <div class="dash-panel-title">✏️ Edit Profile</div>
+        <form id="profile-form">
+          <div class="profile-grid">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" value="John" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" value="Doe" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" value="john.doe@email.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" value="+1 (555) 012-3456" />
+            </div>
+            <div class="form-group" style="grid-column:1/-1;">
+              <label class="form-label">Home Address</label>
+              <input type="text" class="form-input" value="42 Oak Street, Apt 3B, New York, NY 10001" />
+            </div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+            <button type="submit" class="btn btn-primary">💾 Save Changes</button>
+            <button type="button" class="btn btn-ghost" onclick="showToast('Changes discarded.','info')">Discard</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Password Section -->
+      <div class="dash-panel">
+        <div class="dash-panel-title">🔐 Security</div>
+        <div class="profile-grid">
+          <div class="form-group">
+            <label class="form-label">Current Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">New Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" />
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm mt-16" onclick="showToast('Password updated successfully!','success')">Update Password</button>
+      </div>
+    </div>
+
+    <!-- SETTINGS PANEL -->
+    <div id="panel-settings" class="dash-panel" style="display:none;background:none;border:none;padding:0;">
+      <div class="dashboard-greeting">
+        <h2>⚙️ Preferences</h2>
+        <p>Customize your ServeEase experience.</p>
+      </div>
+      <div class="dash-panel">
+        <div class="dash-panel-title">🔔 Notification Settings</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Email Notifications</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);">Booking confirmations and updates</div>
+            </div>
+            <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer;">
+              <input type="checkbox" checked style="opacity:0;width:0;height:0;" onchange="showToast('Notification preference saved!','success')">
+              <span style="position:absolute;inset:0;background:#6366F1;border-radius:24px;transition:0.3s;"></span>
+              <span style="position:absolute;top:3px;left:3px;width:18px;height:18px;background:white;border-radius:50%;transition:0.3s;transform:translateX(20px);"></span>
+            </label>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">SMS Alerts</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);">Professional arrival reminders</div>
+            </div>
+            <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer;">
+              <input type="checkbox" checked style="opacity:0;width:0;height:0;" onchange="showToast('Notification preference saved!','success')">
+              <span style="position:absolute;inset:0;background:#6366F1;border-radius:24px;transition:0.3s;"></span>
+              <span style="position:absolute;top:3px;left:3px;width:18px;height:18px;background:white;border-radius:50%;transition:0.3s;transform:translateX(20px);"></span>
+            </label>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Promotional Offers</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);">Discounts and special deals</div>
+            </div>
+            <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer;">
+              <input type="checkbox" style="opacity:0;width:0;height:0;" onchange="showToast('Notification preference saved!','success')">
+              <span style="position:absolute;inset:0;background:var(--border);border-radius:24px;transition:0.3s;"></span>
+              <span style="position:absolute;top:3px;left:3px;width:18px;height:18px;background:white;border-radius:50%;transition:0.3s;"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="dash-panel">
+        <div class="dash-panel-title">💡 Account Actions</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <button class="btn btn-ghost" style="align-self:flex-start;" onclick="showToast('Data export requested. Check your email in 24 hours.','info')">📥 Export My Data</button>
+          <button class="btn btn-danger btn-sm" style="align-self:flex-start;" onclick="if(confirm('Are you sure you want to delete your account? This cannot be undone.'))showToast('Account deletion request submitted.','warning')">🗑️ Delete Account</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Login Modal -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login-modal')">✕</button>
+    <div class="modal-icon" style="background:rgba(99,102,241,0.1);">⚡</div>
+    <h2>Welcome to ServeEase</h2>
+    <p>Sign in to manage your bookings.</p>
+    <form id="login-form">
+      <div class="form-group mb-16">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group mb-24">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Login →</button>
+    </form>
+  </div>
+</div>
+
+<script src="./js/script.js?v=1.0.1"></script>
+<script>
+  // Duplicate upcoming bookings to second panel too
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const src = document.getElementById('dashboard-upcoming');
+      const dest = document.getElementById('dashboard-upcoming-panel');
+      if (src && dest) dest.innerHTML = src.innerHTML;
+    }, 200);
+  });
+</script>
+</body>
+</html>
